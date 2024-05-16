@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Clone</title>
+</head>
+<body>
+    <div id="chats">
+        <h1>Chats</h1>
+        <ul id="chat-list">
+            {% for dialog in dialogs %}
+                <li class="chat" data-chat-id="{{ dialog.id }}">{{ dialog.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="messages">
+        <h1>Messages</h1>
+        <ul id="message-list">
+            <!-- Messages will be displayed here -->
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // When a chat is clicked
+            $('#chat-list').on('click', '.chat', function() {
+                var chatId = $(this).data('chat-id');
+
+                // Fetch messages for the selected chat
+                $.ajax({
+                    url: '/messages/' + chatId,
+                    type: 'GET',
+                    success: function(data) {
+                        displayMessages(data);
+                    }
+                });
+            });
+
+            function displayMessages(messages) {
+                // Clear previous messages
+                $('#message-list').empty();
+
+                // Display messages
+                messages.forEach(function(message) {
+                    $('#message-list').append('<li>' + message.text + '</li>');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
